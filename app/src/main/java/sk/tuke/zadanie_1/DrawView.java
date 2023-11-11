@@ -15,9 +15,6 @@ public class DrawView extends View {
     //inštancia triedy Paint na kreslenie objektov
     public Paint paint;
 
-    //obrázok pozadia
-    //public Bitmap background;
-
     //obrázok vesmírnej lode
     public Bitmap spaceship;
 
@@ -48,30 +45,26 @@ public class DrawView extends View {
 
     public void loadBitmaps() {
         //načítanie obrázkov z res-> drawable
-        //background = BitmapFactory.decodeResource(getResources(), R.drawable.background_second_activity);
-        //spaceship = BitmapFactory.decodeResource(getResources(), R.drawable.spaceship);
-        //meteor = BitmapFactory.decodeResource(getResources(), R.drawable.meteor);
+        spaceship = BitmapFactory.decodeResource(getResources(), R.drawable.spaceship);
+        meteor = BitmapFactory.decodeResource(getResources(), R.drawable.meteor);
 
         //nastavenie x a y súradníc pre obrázky
-        //spaceshipX = screenWidth / 2 - spaceship.getWidth() / 2; //stred obrazovky
-        //spaceshipY = screenHeight - spaceship.getHeight() - 100; //spodok obrazovky s odstupom
+        spaceshipX = screenWidth / 2 - spaceship.getWidth() / 2; //stred obrazovky
+        spaceshipY = screenHeight - spaceship.getHeight() - 100; //spodok obrazovky s odstupom
 
-        //meteorX = (float) (Math.random() * (screenWidth - meteor.getWidth())); //náhodná pozícia v hornej časti obrazovky
-        //meteorY = -meteor.getHeight(); //mimo obrazovky
+        meteorX = (float) (Math.random() * (screenWidth - meteor.getWidth())); //náhodná pozícia v hornej časti obrazovky
+        meteorY = -meteor.getHeight(); //mimo obrazovky
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        //vykreslenie pozadia
-        //canvas.drawBitmap(background, 0, 0, paint);
-
         //vykreslenie vesmírnej lode
-        //canvas.drawBitmap(spaceship, spaceshipX, spaceshipY, paint);
+        canvas.drawBitmap(spaceship, spaceshipX, spaceshipY, paint);
 
         //vykreslenie meteoritu
-        //canvas.drawBitmap(meteor, meteorX, meteorY, paint);
+        canvas.drawBitmap(meteor, meteorX, meteorY, paint);
     }
 
 }
