@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startGame();
+        //startGame();
         //Intent play = new Intent(MainActivity.this, DrawView.class);
     }
 

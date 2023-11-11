@@ -15,12 +15,9 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.second_activity);
 
         Button playButton = findViewById(R.id.play_button);
-        playButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, MainActivity.class));
-                finish();
-            }
+        playButton.setOnClickListener(v -> {
+            startActivity(new Intent(SecondActivity.this, MainActivity.class));
+            finish();
         });
 
     }
